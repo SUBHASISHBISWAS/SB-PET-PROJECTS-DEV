@@ -19,4 +19,4 @@ EXPOSE 3000
 
 
 # no need for /home/app/server.js because of WORKDIR
-CMD ["npm", "startServer"]
+CMD ["node", "/home/ExpenseTracker/server.js"]

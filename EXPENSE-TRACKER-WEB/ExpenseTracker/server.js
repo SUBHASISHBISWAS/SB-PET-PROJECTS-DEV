@@ -9,13 +9,16 @@ app.use(express.urlencoded({ extended: false }));
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://mongodb:27017/ExpenseTracker", { useNewUrlParser: true })
+  .connect("mongodb://admin:admin@mongodb", {
+    useNewUrlParser: true,
+  })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
 const Item = require("./models/Item");
 
 app.get("/", (req, res) => {
+  //return res.render("index");
   Item.find()
     .then((items) => res.render("index", { items }))
     .catch((err) => res.status(404).json({ msg: "No items found" }));

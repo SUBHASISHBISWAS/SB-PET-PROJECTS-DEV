@@ -3,4 +3,8 @@ node{
       echo "SCM Checkout"
         git branch: 'Expense-Tracker-Web', credentialsId: 'Jenkins-ssh-github-access', url: 'git@github.com:SUBHASISHBISWAS/SB-PET-PROJECTS-DEV.git'
     }
+    stage('Build Docker Image'){
+      echo "Building Docker Image"
+      sh 'docker build -t subhasishbiswas/development:ExpenseTracker-1.0.0 .'
+    }
 }
