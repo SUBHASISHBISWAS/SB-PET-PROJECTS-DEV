@@ -1,5 +1,6 @@
 node{
     stage('SCM checkout'){
+      echo "SCM Checkout"
         git branch: 'Expense-Tracker-Web', credentialsId: 'Jenkins-ssh-github-access', url: 'git@github.com:SUBHASISHBISWAS/SB-PET-PROJECTS-DEV.git'
     }
 }
